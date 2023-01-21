@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+	function nearestVowel(letter) {
+// Define an array of vowels
+const vowels = ["a", "e", "i", "o", "u"];
+// Define the ASCII code of the given letter
+const letterCode = letter.charCodeAt();
+// Define a variable to store the nearest vowel
+let nearestVowel = "";
+// Define a variable to store the distance to the nearest vowel
+let nearestDistance = Infinity;
+for (let i = 0; i < vowels.length; i++) {
+// Define the ASCII code of the current vowel
+const vowelCode = vowels[i].charCodeAt();
+// Calculate the distance between the letter and the vowel
+const distance = Math.abs(letterCode - vowelCode);
+if (distance < nearestDistance) {
+nearestDistance = distance;
+nearestVowel = vowels[i];
+}
+}
+return nearestVowel;
+}
+console.log(nearestVowel("b")); // "a"
+console.log(nearestVowel("s")); // "u"
+console.log(nearestVowel("i")); // "i"
+</script>
+</html>
